@@ -1,3 +1,13 @@
+function start() {
+    $().setChr();
+    $().showOCR();
+}
+function setdata(where, id) {
+    $().setEntry(where, id, null);
+}
+function uploadImage(where, obj) {
+    $().useOCR(where, obj);
+}
 function openDemo() {
     var imgLayer = document.getElementById("imgLayer");
     var imgBoxl = document.getElementById("imgBoxl");
