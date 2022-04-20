@@ -1,6 +1,5 @@
 # GITool原神圣遗物评分工具
 一个简单的原神圣遗物评分工具，如果不使用OCR功能可以实现纯前端
-**项目示例效果 => [GitHub Pages](https://0803qwq.github.io/gitool-gacha-simulator/)**<hr>
 #### 【若使用OCR功能】建议PHP版本：7.x
 ## 基本使用方法
 将本仓库clone到您的网站目录下即可开始使用<br>
