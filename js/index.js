@@ -151,26 +151,65 @@ $(function() {
             }
             finalScore = finalScore + thisScore;
             $('#' + items[itemkey] + '-score').html(thisScore.toFixed(2) + "分");
+            if (thisScore <= 0) {
+                $('#' + items[itemkey] + '-level').html("<p style='color:#000000'>Null</p>");
+            } else if (thisScore > 0 && thisScore <= 4) {
+                $('#' + items[itemkey] + '-level').html("<p style='color:#888888'>False</p>");
+            } else if (thisScore > 4 && thisScore <= 8) {
+                $('#' + items[itemkey] + '-level').html("<p style='color:#0000FF'>C</p>");
+            } else if (thisScore > 8 && thisScore <= 12) {
+                $('#' + items[itemkey] + '-level').html("<p style='color:#000FFF'>C+</p>");
+            } else if (thisScore > 12 && thisScore <= 16) {
+                $('#' + items[itemkey] + '-level').html("<p style='color:#00FFFF'>B</p>");
+            } else if (thisScore > 16 && thisScore <= 20) {
+                $('#' + items[itemkey] + '-level').html("<p style='color:#00FFF0'>B+</p>");
+            } else if (thisScore > 20 && thisScore <= 24) {
+                $('#' + items[itemkey] + '-level').html("<p style='color:#00FF00'>A</p>");
+            } else if (thisScore > 24 && thisScore <= 28) {
+                $('#' + items[itemkey] + '-level').html("<p style='color:#0FFF00'>A+</p>");
+            } else if (thisScore > 28 && thisScore <= 32) {
+                $('#' + items[itemkey] + '-level').html("<p style='color:#FFFF00'>S</p>");
+            } else if (thisScore > 32 && thisScore <= 36) {
+                $('#' + items[itemkey] + '-level').html("<p style='color:#FFF000'>S+</p>");
+            } else if (thisScore > 36 && thisScore <= 40) {
+                $('#' + items[itemkey] + '-level').html("<p style='color:#FF0000'>SS</p>");
+            } else if (thisScore > 40 && thisScore <= 44) {
+                $('#' + items[itemkey] + '-level').html("<p style='color:#F00000'>SS+</p>");
+            } else if (thisScore > 44) {
+                $('#' + items[itemkey] + '-level').html("<p style='color:#888888'>SSS</p>");
+            } else {
+                $('#' + items[itemkey] + '-level').html("<p style='color:#000000'>NaN</p>");
+            }
         }
         $('#final-score').html(finalScore.toFixed(2) + "分");
         if (finalScore <= 0) {
-            $('#final-level').html("<p style='color:#000000'>Null</p>");
-        } else if (finalScore > 0 && finalScore <= 35) {
-            $('#final-level').html("<p style='color:#888888'>False</p>");
-        } else if (finalScore > 35 && finalScore <= 70) {
-            $('#final-level').html("<p style='color:#0000FF'>C</p>");
-        } else if (finalScore > 70 && finalScore <= 105) {
-            $('#final-level').html("<p style='color:#00FFFF'>B</p>");
-        } else if (finalScore > 105 && finalScore <= 140) {
-            $('#final-level').html("<p style='color:#00FF00'>A</p>");
-        } else if (finalScore > 140 && finalScore <= 175) {
-            $('#final-level').html("<p style='color:#FFFF00'>S</p>");
-        } else if (finalScore > 175 && finalScore <= 210) {
-            $('#final-level').html("<p style='color:#FF0000'>SS</p>");
-        } else if (finalScore > 210) {
-            $('#final-level').html("<p style='color:#000000'>SSS</p>");
-        } else {
-            $('#final-level').html("<p style='color:#000000'>NaN</p>");
-        }
+                $('#final-level').html("<p style='color:#000000'>Null</p>");
+            } else if (finalScore > 0 && finalScore <= 20) {
+                $('#final-level').html("<p style='color:#888888'>False</p>");
+            } else if (finalScore > 20 && finalScore <= 40) {
+                $('#final-level').html("<p style='color:#0000FF'>C</p>");
+            } else if (finalScore > 40 && finalScore <= 60) {
+                $('#final-level').html("<p style='color:#000FFF'>C+</p>");
+            } else if (finalScore > 60 && finalScore <= 80) {
+                $('#final-level').html("<p style='color:#00FFFF'>B</p>");
+            } else if (finalScore > 80 && finalScore <= 100) {
+                $('#final-level').html("<p style='color:#00FFF0'>B+</p>");
+            } else if (finalScore > 100 && finalScore <= 120) {
+                $('#final-level').html("<p style='color:#00FF00'>A</p>");
+            } else if (finalScore > 120 && finalScore <= 140) {
+                $('#final-level').html("<p style='color:#0FFF00'>A+</p>");
+            } else if (finalScore > 140 && finalScore <= 160) {
+                $('#final-level').html("<p style='color:#FFFF00'>S</p>");
+            } else if (finalScore > 160 && finalScore <= 180) {
+                $('#final-level').html("<p style='color:#FFF000'>S+</p>");
+            } else if (finalScore > 180 && finalScore <= 200) {
+                $('#final-level').html("<p style='color:#FF0000'>SS</p>");
+            } else if (finalScore > 200 && finalScore <= 220) {
+                $('#final-level').html("<p style='color:#F00000'>SS+</p>");
+            } else if (finalScore > 220) {
+                $('#final-level').html("<p style='color:#888888'>SSS</p>");
+            } else {
+                $('#final-level').html("<p style='color:#000000'>NaN</p>");
+            }
     });
 });
