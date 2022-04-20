@@ -17,7 +17,7 @@
                 </select><br>
                 <table bordercolor='black' cellspacing='0' cellpadding='5' id="Call-table" style="display:block">
                     <tr>
-                        <td style="font-size:15px;vertical-align:top">
+                        <td style="font-size:15px;vertical-align:top;width:50%">
                             生之花<span id="flower-ocr"></span>
                             <select name="flower-1" id="flower-1" onchange="setdata('flower', 1);">
                                 <option id='empty' value='empty'>副词条1</option>
@@ -72,7 +72,7 @@
                                 <option id="recharge" value="recharge">元素充能效率</option>
                             </select><span id="flower-4d"><br></span>
                         </td>
-                        <td style="font-size:15px;vertical-align:top">
+                        <td style="font-size:15px;vertical-align:top;width:50%">
                             死之羽<span id="feather-ocr"></span>
                             <select name="feather-1" id="feather-1" onchange="setdata('feather', 1);">
                                 <option id='empty' value='empty'>副词条1</option>
@@ -129,7 +129,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="font-size:15px;vertical-align:top">
+                        <td style="font-size:15px;vertical-align:top;width:50%">
                             时之沙<span id="clock-ocr"></span><!--<select name="clock-0" id="clock-0" onchange="setdata('clock', 0);" onclick="change('clock', 0);">
                                 <option id='empty' value='empty'>主词条</option>
                             </select>-->
@@ -186,7 +186,7 @@
                                 <option id="recharge" value="recharge">元素充能效率</option>
                             </select><span id="clock-4d"><br></span>
                         </td>
-                        <td style="font-size:15px;vertical-align:top">
+                        <td style="font-size:15px;vertical-align:top;width:50%">
                             空之杯<span id="cup-ocr"></span><!--<select name="cup-0" id="cup-0" onchange="setdata('cup', 0);" onclick="change('cup', 0);">
                                 <option id='empty' value='empty'>主词条</option>
                             </select>-->
@@ -245,7 +245,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="font-size:15px;vertical-align:top">
+                        <td style="font-size:15px;vertical-align:top;width:50%">
                             理之冠*<span id="head-ocr"></span>
                             <select name="head-0" id="head-0" onchange="setdata('head', 0);">
                                 <option id='empty' value='empty'>主词条类别</option>
@@ -318,36 +318,39 @@
                         <tr>
                             <th>部位</th>
                             <th>评分</th>
+                            <th>评级</th>
                         </tr>
                     </thead>
                     <tbody style="text-align:center">
                         <tr>
-                            <td>评级</td>
-                            <td><b><span id="final-level"></span></b></td>
-                        </tr>
-                        <tr>
                             <td>总分</td>
                             <td><span id="final-score"></span></td>
+                            <td><b><span id="final-level"></span></b></td>
                         </tr>
                         <tr>
                             <td>生之花</td>
                             <td><span id="flower-score"></span></td>
+                            <td><b><span id="flower-level"></span></b></td>
                         </tr>
                         <tr>
                             <td>死之羽</td>
                             <td><span id="feather-score"></span></td>
+                            <td><b><span id="feather-level"></span></b></td>
                         </tr>
                         <tr>
                             <td>时之沙</td>
                             <td><span id="clock-score"></span></td>
+                            <td><b><span id="clock-level"></span></b></td>
                         </tr>
                         <tr>
                             <td>空之杯</td>
                             <td><span id="cup-score"></span></td>
+                            <td><b><span id="cup-level"></span></b></td>
                         </tr>
                         <tr>
                             <td>理之冠</td>
                             <td><span id="head-score"></span></td>
+                            <td><b><span id="head-level"></span></b></td>
                         </tr>
                     </tbody>
                 </table>
