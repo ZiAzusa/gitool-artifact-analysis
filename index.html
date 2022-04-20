@@ -1,0 +1,381 @@
+<html>
+<head>
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8">
+    <meta name='viewport' content='width=device-width,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'>
+    <title>原神圣遗物评分工具</title>
+    <link href='icon.ico' rel='icon' type='image/x-icon' />
+    <link href='index.css' rel='stylesheet' type='text/css' />
+</head>
+<body onload="start();">
+    <div id='overlay' class='overlay'>
+        <div class='text-bg'>
+            <h3>原神圣遗物评分工具</h3>
+            <h4 id="ocr-title" style='display:none'>OCR自动获取圣遗物副词条的图片示例：<a href="javascript:openDemo();" style="color:#1E83FF">查看</a></h4>
+            <p style="font-size:15px">
+                请选择角色：<select name="chr-list" id="chr-list" style="display:inline">
+                    <option id='empty' value='empty'>角色名称</option>
+                </select><br>
+                <table bordercolor='black' cellspacing='0' cellpadding='5' id="Call-table" style="display:block">
+                    <tr>
+                        <td style="font-size:15px;vertical-align:top">
+                            生之花<span id="flower-ocr"></span>
+                            <select name="flower-1" id="flower-1" onchange="setdata('flower', 1);">
+                                <option id='empty' value='empty'>副词条1</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <!--<option id="hp-n" value="hp-n">数值生命值</option>-->
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="flower-1d"><br></span>
+                            <select name="flower-2" id="flower-2" onchange="setdata('flower', 2);">
+                                <option id='empty' value='empty'>副词条2</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <!--<option id="hp-n" value="hp-n">数值生命值</option>-->
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="flower-2d"><br></span>
+                            <select name="flower-3" id="flower-3" onchange="setdata('flower', 3);">
+                                <option id='empty' value='empty'>副词条3</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <!--<option id="hp-n" value="hp-n">数值生命值</option>-->
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="flower-3d"><br></span>
+                            <select name="flower-4" id="flower-4" onchange="setdata('flower', 4);">
+                                <option id='empty' value='empty'>副词条4</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <!--<option id="hp-n" value="hp-n">数值生命值</option>-->
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="flower-4d"><br></span>
+                        </td>
+                        <td style="font-size:15px;vertical-align:top">
+                            死之羽<span id="feather-ocr"></span>
+                            <select name="feather-1" id="feather-1" onchange="setdata('feather', 1);">
+                                <option id='empty' value='empty'>副词条1</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <!--<option id="atk-n" value="atk-n">数值攻击力</option>-->
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="feather-1d"><br></span>
+                            <select name="feather-2" id="feather-2" onchange="setdata('feather', 2);">
+                                <option id='empty' value='empty'>副词条2</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <!--<option id="atk-n" value="atk-n">数值攻击力</option>-->
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="feather-2d"><br></span>
+                            <select name="feather-3" id="feather-3" onchange="setdata('feather', 3);">
+                                <option id='empty' value='empty'>副词条3</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <!--<option id="atk-n" value="atk-n">数值攻击力</option>-->
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="feather-3d"><br></span>
+                            <select name="feather-4" id="feather-4" onchange="setdata('feather', 4);">
+                                <option id='empty' value='empty'>副词条4</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <!--<option id="atk-n" value="atk-n">数值攻击力</option>-->
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="feather-4d"><br></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:15px;vertical-align:top">
+                            时之沙<span id="clock-ocr"></span><!--<select name="clock-0" id="clock-0" onchange="setdata('clock', 0);" onclick="change('clock', 0);">
+                                <option id='empty' value='empty'>主词条</option>
+                            </select>-->
+                            <select name="clock-1" id="clock-1" onchange="setdata('clock', 1);">
+                                <option id='empty' value='empty'>副词条1</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="clock-1d"><br></span>
+                            <select name="clock-2" id="clock-2" onchange="setdata('clock', 2);">
+                                <option id='empty' value='empty'>副词条2</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="clock-2d"><br></span>
+                            <select name="clock-3" id="clock-3" onchange="setdata('clock', 3);">
+                                <option id='empty' value='empty'>副词条3</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="clock-3d"><br></span>
+                            <select name="clock-4" id="clock-4" onchange="setdata('clock', 4);">
+                                <option id='empty' value='empty'>副词条4</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="clock-4d"><br></span>
+                        </td>
+                        <td style="font-size:15px;vertical-align:top">
+                            空之杯<span id="cup-ocr"></span><!--<select name="cup-0" id="cup-0" onchange="setdata('cup', 0);" onclick="change('cup', 0);">
+                                <option id='empty' value='empty'>主词条</option>
+                            </select>-->
+                            <select name="cup-1" id="cup-1" onchange="setdata('cup', 1);">
+                                <option id='empty' value='empty'>副词条1</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="cup-1d"><br></span>
+                            <select name="cup-2" id="cup-2" onchange="setdata('cup', 2);">
+                                <option id='empty' value='empty'>副词条2</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="cup-2d"><br></span>
+                            <select name="cup-3" id="cup-3" onchange="setdata('cup', 3);">
+                                <option id='empty' value='empty'>副词条3</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="cup-3d"><br></span>
+                            <select name="cup-4" id="cup-4" onchange="setdata('cup', 4);">
+                                <option id='empty' value='empty'>副词条4</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="cup-4d"><br></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:15px;vertical-align:top">
+                            理之冠*<span id="head-ocr"></span>
+                            <select name="head-0" id="head-0" onchange="setdata('head', 0);">
+                                <option id='empty' value='empty'>主词条类别</option>
+                                <option id="crit" value="crit">暴率/暴伤</option>
+                                <option id="other" value="other">其他主词条</option>
+                            </select>
+                            <select name="head-1" id="head-1" onchange="setdata('head', 1);">
+                                <option id='empty' value='empty'>副词条1</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="head-1d"><br></span>
+                            <select name="head-2" id="head-2" onchange="setdata('head', 2);">
+                                <option id='empty' value='empty'>副词条2</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="head-2d"><br></span>
+                            <select name="head-3" id="head-3" onchange="setdata('head', 3);">
+                                <option id='empty' value='empty'>副词条3</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="head-3d"><br></span>
+                            <select name="head-4" id="head-4" onchange="setdata('head', 4);">
+                                <option id='empty' value='empty'>副词条4</option>
+                                <option id="crit-p" value="crit-p">暴击率</option>
+                                <option id="crit-d" value="crit-d">暴击伤害</option>
+                                <option id="mastery" value="mastery">元素精通</option>
+                                <option id="atk-p" value="atk-p">百分比攻击力</option>
+                                <option id="hp-p" value="hp-p">百分比生命值</option>
+                                <option id="def-p" value="def-p">百分比防御力</option>
+                                <option id="atk-n" value="atk-n">数值攻击力</option>
+                                <option id="hp-n" value="hp-n">数值生命值</option>
+                                <option id="def-n" value="def-n">数值防御力</option>
+                                <option id="recharge" value="recharge">元素充能效率</option>
+                            </select><span id="head-4d"><br></span>
+                        </td>
+                        <td>
+                            <button id="score" name="score">计算评分</button>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <div class="notice">*: 暂不支持自动识别理之冠的主词条</div><br>
+            <div class='notice'>
+                <table bordercolor='black' cellspacing='0' cellpadding='5' id="Call-table" style="display:block">
+                    <thead>
+                        <tr>
+                            <th>部位</th>
+                            <th>评分</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align:center">
+                        <tr>
+                            <td>评级</td>
+                            <td><b><span id="final-level"></span></b></td>
+                        </tr>
+                        <tr>
+                            <td>总分</td>
+                            <td><span id="final-score"></span></td>
+                        </tr>
+                        <tr>
+                            <td>生之花</td>
+                            <td><span id="flower-score"></span></td>
+                        </tr>
+                        <tr>
+                            <td>死之羽</td>
+                            <td><span id="feather-score"></span></td>
+                        </tr>
+                        <tr>
+                            <td>时之沙</td>
+                            <td><span id="clock-score"></span></td>
+                        </tr>
+                        <tr>
+                            <td>空之杯</td>
+                            <td><span id="cup-score"></span></td>
+                        </tr>
+                        <tr>
+                            <td>理之冠</td>
+                            <td><span id="head-score"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id='imgLayer' onclick="closeDemo();"></div>
+        <div id='imgBoxl' class='modal'>
+            <img id='bigimg' src='demo.jpg' title='点击空白处以关闭' />
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type='text/javascript' src='js/index.js'></script>
+    <script>
+    function start() {
+        $().setChr();
+        $().showOCR();
+    }
+    function setdata(where, id) {
+        $().setEntry(where, id, null);
+    }
+    function uploadImage(where, obj) {
+        $().useOCR(where, obj);
+    }
+    </script>
+    <!--<footer id="footer">
+        <ul class="copyright">
+            <p>2022 &copy; Powered by 0803QwQ</p>
+        </ul>
+    </footer>-->
+</body>
+</html>
