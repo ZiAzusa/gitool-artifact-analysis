@@ -36,7 +36,7 @@ data.json文件是设置OCR功能，设置副词条权重以及设置角色有�
 ```
 ## 关于OCR图片文字识别
 OCR部分使用了 [OCRSpace的免费API](https://ocr.space/OCRAPI) ，为避免APIKEY的泄露，这里使用PHP进行调用；同时，OCRSpace的APIKEY配置请在ocr.php文件内修改<br>
-如需对用户启用OCR功能，请在data.json将ocr.enable的值设置为true；然后在 [OCRSpace](https://ocr.space/OCRAPI) 申请APIKEY并将其填写到ocr.php的```$APIKEY = "";```之中<br>
+如需对用户启用OCR功能，请在data.json将ocr.enable的值设置为true；然后在 [OCRSpace](https://ocr.space/OCRAPI) 申请APIKEY，并填写到ocr.php的```$APIKEY = "";```之中<br>
 反之，如需禁用OCR功能，只需在data.json将ocr.enable的值设置为false即可<br>
 **注意在禁用OCR功能后，本项目不依赖PHP，可实现纯前端部署**
 ## Todo（画饼）
