@@ -49,13 +49,8 @@
     left:50%;
     transform:translateX(-50%) translateY(-50%);
 }
-button[id='upload'] {
-    color:rgb(0,0,0);
-    border:2px solid rgb(0,0,0);
-    cursor:pointer;
-}
-button[id='score'] {
-    width:160px;
+button {
+    width:130px;
     margin:20px auto;
     height:40px;
     border-width:0px;
@@ -68,7 +63,7 @@ button[id='score'] {
     font-size:17px;
     -webkit-appearance:none;
 }
-button[id='score']:hover {
+button:hover {
     background:#3C8DFF;
     -webkit-appearance:none;
 }
@@ -128,6 +123,7 @@ table {
 td {
     z-index:300;
     width:33%;
-    min-width:90px;
+    min-width:80px;
+    max-width:160px;
     vertical-align:middle;
 }
