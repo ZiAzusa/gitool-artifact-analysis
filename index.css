@@ -50,7 +50,7 @@
     transform:translateX(-50%) translateY(-50%);
 }
 button {
-    width:130px;
+    width:144px;
     margin:20px auto;
     height:40px;
     border-width:0px;
@@ -60,7 +60,7 @@ button {
     outline:none;
     font-family:Microsoft YaHei;
     color:white;
-    font-size:17px;
+    font-size:15px;
     -webkit-appearance:none;
 }
 button:hover {
@@ -123,7 +123,7 @@ table {
 td {
     z-index:300;
     width:33%;
-    min-width:80px;
-    max-width:160px;
+    min-width:102px;
+    max-width:170px;
     vertical-align:middle;
 }
