@@ -38,6 +38,9 @@ OCR部分使用了 [OCRSpace的免费API](https://ocr.space/OCRAPI) ，为避免
 如需对用户启用OCR功能，请在data.json将ocr.enable的值设置为true；然后在 [OCRSpace](https://ocr.space/OCRAPI) 申请APIKEY，并填写到ocr.php的```$APIKEY = "";```之中<br>
 反之，如需禁用OCR功能，只需在data.json将ocr.enable的值设置为false即可<br>
 **注意在禁用OCR功能后，本项目不依赖PHP，可实现纯前端部署**
+## 更新记录
+#### 2022/4/21
+支持导入和导出圣遗物数据
 ## Todo（画饼）
 训练专用的OCR模型并内置在项目下<br>
 ...
