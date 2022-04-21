@@ -17,7 +17,7 @@
                 </select><br>
                 <table bordercolor='black' cellspacing='0' cellpadding='5' id="Call-table" style="display:block">
                     <tr>
-                        <td style="font-size:15px;vertical-align:top;width:50%">
+                        <td style="font-size:15px;vertical-align:top;width:160px">
                             生之花<span id="flower-ocr"></span>
                             <select name="flower-1" id="flower-1" onchange="setdata('flower', 1);">
                                 <option id='empty' value='empty'>副词条1</option>
@@ -72,7 +72,7 @@
                                 <option id="recharge" value="recharge">元素充能效率</option>
                             </select><span id="flower-4d"><br></span>
                         </td>
-                        <td style="font-size:15px;vertical-align:top;width:50%">
+                        <td style="font-size:15px;vertical-align:top;width:160px">
                             死之羽<span id="feather-ocr"></span>
                             <select name="feather-1" id="feather-1" onchange="setdata('feather', 1);">
                                 <option id='empty' value='empty'>副词条1</option>
@@ -129,7 +129,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="font-size:15px;vertical-align:top;width:50%">
+                        <td style="font-size:15px;vertical-align:top;width:160px">
                             时之沙<span id="clock-ocr"></span><!--<select name="clock-0" id="clock-0" onchange="setdata('clock', 0);" onclick="change('clock', 0);">
                                 <option id='empty' value='empty'>主词条</option>
                             </select>-->
@@ -186,7 +186,7 @@
                                 <option id="recharge" value="recharge">元素充能效率</option>
                             </select><span id="clock-4d"><br></span>
                         </td>
-                        <td style="font-size:15px;vertical-align:top;width:50%">
+                        <td style="font-size:15px;vertical-align:top;width:160px">
                             空之杯<span id="cup-ocr"></span><!--<select name="cup-0" id="cup-0" onchange="setdata('cup', 0);" onclick="change('cup', 0);">
                                 <option id='empty' value='empty'>主词条</option>
                             </select>-->
@@ -245,7 +245,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="font-size:15px;vertical-align:top;width:50%">
+                        <td style="font-size:15px;vertical-align:top;width:160px">
                             理之冠*<span id="head-ocr"></span>
                             <select name="head-0" id="head-0" onchange="setdata('head', 0);">
                                 <option id='empty' value='empty'>主词条类别</option>
@@ -305,13 +305,19 @@
                                 <option id="recharge" value="recharge">元素充能效率</option>
                             </select><span id="head-4d"><br></span>
                         </td>
-                        <td>
-                            <button id="score" name="score">计算评分</button>
+                        <td style="vertical-align:center;width:160px">
+                            <div class='notice' style='text-align:center'>
+                                <span style="display:block">数据操作</span>
+                                <button id="export" name="export" style='width:65px;display:inline'>导出</button>
+                                <button id="import" name="import" style='width:65px;display:inline'>导入</button>
+                                <span style="display:block;font-size:8px">您可以通过导入和导出数据快速使用和保存圣遗物信息</span>
+                            </div>
+                            <div style="width:100%;text-align:center"><button id="score" name="score" style="display:inline-block">计算评分</button></div>
                         </td>
                     </tr>
                 </table>
             </p>
-            <div class="notice">*: 暂不支持自动识别理之冠的主词条</div><br>
+            <span id="ocr-inf" style="display:none"><div class="notice">*: 暂不支持自动识别理之冠的主词条</div><br></span>
             <div class='notice'>
                 <table bordercolor='black' cellspacing='0' cellpadding='5' id="Call-table" style="display:block">
                     <thead>
@@ -360,6 +366,10 @@
         <div id='imgBoxl' class='modal'>
             <img id='bigimg' src='demo.jpg' title='点击空白处以关闭' />
         </div>
+    </div>
+    <div style='display:none;top:0px;bottom:0px;left:0px;right:0px;margin:auto'>
+        <a id='export-link'><span id='export-text'></span></a>
+        <input id='import-file' type="file" name="upload" onchange="uploadData(this);" accept='.json'>
     </div>
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type='text/javascript' src='js/index.js'></script>
